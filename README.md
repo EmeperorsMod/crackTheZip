@@ -318,3 +318,5 @@ For wrapper scripts (john.py, hashcat.py, crackV3.py, crackwork.py), make sure t
 ---
 
 *This README covers all Python scripts in this project folder (asset folders ignored).*
+#   c r a c k T h e Z i p  
+ 
