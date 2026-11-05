@@ -34,21 +34,21 @@ def expand_pool_chars(token_string):
     return "".join(sorted(set(expanded), key=expanded.index))
 
 # --- CONFIGURATION (WSL Paths) ---
-zip_file = "Cr-@Ryff winstress..zip"
+zip_file = "Asset FA set 2 2026(FA2026S2).zip"
 john_bin = "/home/mjar/john/run/john"
 zip2john_bin = "/home/mjar/john/run/zip2john"
 hash_file = "zip_hash.txt"
 
-prefix = ""
+prefix = "FA"
 suffix = ""
 
 # Choose your mode: "pool" (random characters from a defined pool) OR "positional" (strict slot rules)
 mode = "pool"
 
 # --- SETTINGS FOR "pool" MODE ---
-char_pool_pattern = "?l?d"  # Uppercase letters and digits
-min_length = 4
-max_length = 6
+char_pool_pattern = "?u?d"  # Uppercase letters and digits
+min_length = 8
+max_length = 8
 
 # --- SETTINGS FOR "positional" MODE ---
 positional_pattern = "?d?d?d?d?u?d" 
@@ -130,10 +130,10 @@ if os.path.exists(hash_file):
 
 if success_pw:
     print(f"\n[+] SUCCESS! Valid working password confirmed: '{success_pw}'")
-    print(f"\n[*] Extracting archive using confirmed password...")
+    #print(f"\n[*] Extracting archive using confirmed password...")
     extract_cmd = f'unzip -o -P "{success_pw}" "{zip_file}"'
-    subprocess.run(extract_cmd, shell=True)
-    print(f"[+] Archive extracted successfully!")
+    #subprocess.run(extract_cmd, shell=True)
+    #print(f"[+] Archive extracted successfully!")
 else:
     print(f"\n[-] Password not found across configured masks.")
 
